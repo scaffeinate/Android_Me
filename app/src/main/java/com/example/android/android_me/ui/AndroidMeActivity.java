@@ -16,9 +16,9 @@
 
 package com.example.android.android_me.ui;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
@@ -32,7 +32,10 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        // TODO (5) Only create new fragments when there is no previously saved state
+        // COMPLETED (5) Only create new fragments when there is no previously saved state
+        if (savedInstanceState != null) {
+            return;
+        }
 
         // Create a new head BodyPartFragment
         BodyPartFragment headFragment = new BodyPartFragment();
